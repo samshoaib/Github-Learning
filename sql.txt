@@ -1,0 +1,36 @@
+create database Customer
+
+create table Customer(
+
+Id int Primary key identity(1,1),
+FirstName varchar(50),
+LastName varchar(50),
+Age int,
+
+)
+
+select * from Customer;
+select FirstName,LastName from Customer;
+select FirstName,LastName from Customer where LastName='essam';
+select FirstName,LastName,Age from Customer where FirstName like 'nabeeha%';
+
+insert into Customer(
+FirstName,LastName,Age) values('Sameed','Shoaib',23);
+
+--To update any coulumn
+update Customer set Age=99 where FirstName='nabeeha3' and LastName='essam';
+
+-- To delete a row
+Delete Customer where FirstName='nabeeha2';
+Delete Customer where FirstName='nabeeha3';
+
+-- To add a coulum in the Customer table
+alter table Customer
+add City varchar(50);
+
+-- To update the city coulumn
+update Customer set City='Karachi' where FirstName='Sameed';
+update Customer set City='Islamabad';
+
+-- To delete the customer table
+drop table Customer;
